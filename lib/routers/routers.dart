@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter/public.dart';
 
-class Routers{
+class Routes {
 	//路由管理
 	static FluroRouter router;
 	static String loginPage = '/loginpage';

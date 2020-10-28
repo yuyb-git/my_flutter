@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:my_flutter/public.dart';
+import 'package:my_flutter/pages/splash_page.dart';
 
 
 void main() {
@@ -23,8 +24,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
     @override
     Widget build(BuildContext context) {
-    	final route = FluroRouter();
-    	//Routes.con
+    	final router = FluroRouter();
+	    Routes.configureRoutes(router);
+	    Routes.router = router;
+	
+	    return Container(
+		    child: MaterialApp(
+			    title: "HRL微博",
+			    debugShowCheckedModeBanner: false,
+			    theme: ThemeData(primaryColor: Colors.white),
+			    onGenerateRoute: Routes.router.generator,
+			    home: SplashPage()),
+	    );
     }
 }
 

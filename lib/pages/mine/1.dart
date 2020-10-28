@@ -2,10 +2,10 @@ import "package:dio/dio.dart";
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter/constant/constant.dart';
-import 'package:my_flutter/http/service_method.dart';
+//import 'package:my_flutter/http/service_method.dart';
 import 'package:my_flutter/public.dart';
 import 'package:my_flutter/util/sp_util.dart';
-import 'package:my_flutter/util/toast_util.dart';
+//import 'package:my_flutter/util/toast_util.dart';
 
 import '../../widget/textfield/TextFieldAccount.dart';
 import '../../widget/textfield/TextFieldPwd.dart';
@@ -62,8 +62,8 @@ class _LoginPageState extends State<LoginPage> {
 									},
 								),
 							),
-							buildLoginBtn(),
-							buildRegistForget(),
+							//buildLoginBtn(),
+							//buildRegistForget(),
 							buildOtherLoginWay(),
 						],
 					),
@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
 		);
 	}
 
-	Widget buildLoginBtn() {
+	/*Widget buildLoginBtn() {
 		return new Container(
 			margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 60.0),
 			child: new RaisedButton(
@@ -134,10 +134,10 @@ class _LoginPageState extends State<LoginPage> {
 				),
 			),
 		);
-	}
+	}*/
 
 	//注册,忘记密码
-	Widget buildRegistForget() {
+	/*Widget buildRegistForget() {
 		return Row(
 			mainAxisAlignment: MainAxisAlignment.spaceBetween, //子组件的排列方式为主轴两端对齐
 			children: <Widget>[
@@ -164,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
 				),
 			],
 		);
-	}
+	}*/
 
 	//其他登陆方式
 	Widget buildOtherLoginWay() {

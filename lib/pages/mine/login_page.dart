@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter/util/sp_util.dart';
 import 'package:my_flutter/constant/constant.dart';
 
+import '../../widget/textfield/TextFieldAccount.dart';
+import '../../widget/textfield/TextFieldPwd.dart';
+
 class LoginPage extends StatefulWidget{
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -26,7 +29,36 @@ class _LoginPageState extends State<LoginPage>{
               body: new DropdownButtonHideUnderline(
                   child: new ListView(
                       children: <Widget>[
-                      
+                          buildTile(),
+                          new Container(
+                              margin:
+                              const EdgeInsets.only(left: 20.0, top: 30.0, bottom: 20),
+                              child: new Text(
+                                  "请输入账号密码",
+                                  style: new TextStyle(fontSize: 24.0, color: Colors.black),
+                              ),
+                          ),
+                          new Container(
+                              margin: EdgeInsets.only(top: 10, left: 20, right: 20),
+                              child: AccountEditText(
+                                  contentStrCallBack: (content) {
+                                      _inputAccount = content;
+                                      setState(() {});
+                                  },
+                              ),
+                          ),
+                          new Container(
+                              margin: EdgeInsets.only(top: 10, left: 20, right: 20),
+                              child: PwdEditText(
+                                  contentStrCallBack: (content) {
+                                      _inputPwd = content;
+                                      setState(() {});
+                                  },
+                              ),
+                          ),
+                          //buildLoginBtn(),
+                          //buildRegistForget(),
+                          //buildOtherLoginWay(),
                       ],
                   )
               ),
@@ -50,6 +82,15 @@ class _LoginPageState extends State<LoginPage>{
                    onTap: (){
                        Navigator.pop(context);
                    },
+               ),
+               new InkWell(
+                   child: new Padding(
+                       padding: const EdgeInsets.all(12.0),
+                       child: new Text(
+                           '帮助',
+                           style: new TextStyle(fontSize: 16.0, color: Color(0xff6B91BB)),
+                       ),
+                   ),
                )
             ],
         );
